@@ -26,12 +26,29 @@
             </div>
             <div data-aos="flip-left" class="header-right">
                 <a href="#" class="profile-icon">
-                    <img src="./images/Frame 3.svg" alt="Profile">
-                </a>
-                <a href="#" class="search-icon">
-                    <img src="./images/menu (1).svg" alt="Search">
+                    <img src="./images/Frame 3.svg" alt="Profile" style="margin-left: -150px;>
+                    <a href="#" class="search-icon"></a>
+                    <img src="./images/menu (1).svg" alt="Search" style="margin-left: -1px;">
                 </a>
             </div>
+            <!-- <div class="menu-mobile">
+                <div class="logo">
+                    <img src="./icons/Group 8.svg" alt="" /><i class="fa-solid fa-xmark close"
+                        style="color: #ffffff; font-size: 30px"></i>
+                </div>
+
+                <div class="nav_mobile">
+                    <a href="#d">destinations</a>
+                    <a href="#e">experiences</a>
+                    <a href="#a"> about</a>
+                    <a href="#g">gallery</a>
+                    <div class="social">
+                        <img style="width: 40px" src="./icons/Facebook.svg" alt="" />
+                        <img style="width: 30px" src="./icons/linkedin.svg" alt="" />
+                        <img style="width: 40px" src="./icons/Google.svg" alt="" />
+                    </div>
+                </div>
+            </div> -->
         </nav>
     </header>
 
@@ -102,8 +119,7 @@
         </article>
 
         <section class="secrets">
-            <div data
-            3-aos="flip-left" class="secret-inner">
+            <div data 3-aos="flip-left" class="secret-inner">
                 <h3>Explore Our Secrets</h3>
                 <div class="secret-images">
                     <img data-aos="flip-left" src="images/Rectangle 1258.png" alt="">
@@ -296,7 +312,7 @@
             }
 
             #backToTop:hover {
-                background-color:red;
+                background-color: red;
             }
         </style>
 
@@ -321,6 +337,22 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+    </script>
+
+    <script>
+        const menu = document.querySelector(".menu");
+        const menuMobile = document.querySelector(".menu-mobile");
+        const close = document.querySelector(".close");
+
+        menu.addEventListener("click", () => {
+            menuMobile.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+
+        close.addEventListener("click", () => {
+            menuMobile.classList.remove("active");
+            document.body.style.overflowY = "auto";
+        });
     </script>
 
 </body>

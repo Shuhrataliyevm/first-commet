@@ -1,0 +1,20 @@
+@mixin box-style ($width , $height , $padding , $border-radius , $background-color , $color) {
+    width: $width;
+    color: $color;
+    height: $height;
+    padding: $padding;
+    border-radius: $border-radius;
+    background-color: $background-color;
+    // @onclude box-style {}
+}
+
+@mixin box-hover ($opacity){
+    opacity: $opacity;
+}
+
+
+@mixin box-active ($opacity , $background-color , $color){
+    opacity: $opacity;
+    background-color: $background-color;
+    color: $color;
+}
