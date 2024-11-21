@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD , Filter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="container mx-auto shadow my-10 form flex flex-col gap-4 item-start justify-start">
+        <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            type="text" placeholder="Ismingizni kiriting" id="first_name">
+        <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            type="text" placeholder="Familyangizni kiriting" id="last_name">
+        <select
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            id="is_active">
+            <option value="true">Faol</option>
+            <option value="false">No Faol</option>
+        </select>
+        <button class="bg-blue-500 text-white  py-2 w-[250px]" id="add_user" onclick="addUser()">O'quvchi
+            qo'shish</button>
+        <button class="bg-orange-500 text-white  py-2 w-[250px] hidden" id="edit_user"
+            onclick="editUserHandle()">Tahrirlash</button>
+    </div>
+
+
+    <div class="filter container mx-auto mb-3">
+        <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+            type="text" placeholder="Ism bo'yicha qidiring" id="first_name"
+            oninput="searchByName(this)"
+            >
+        <select
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            id="is_active_filter"
+            onchange="filterByStatus(this)"
+            >
+            <option value="all">Barchasi</option>
+            <option value="true">Faol</option>
+            <option value="false">No Faol</option>
+        </select>
+    </div>
+
+
+
+    <div class="container mx-auto">
+        <table class="w-full text-sm text-left">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3">
+                        N#
+                    </th>
+                    <th class="px-6 py-3">
+                        Ismi
+                    </th>
+                    <th class="px-6 py-3">
+                        Familyasi
+                    </th>
+                    <th class="px-6 py-3">
+                        Holati
+                    </th>
+                    <th class="px-6 py-3">
+                        Amallar
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="student_table_tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <button onclick="deleteUser(0)">o'chirish</button> -->
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

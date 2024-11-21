@@ -25,33 +25,117 @@
                 </ul>
             </div>
             <div data-aos="flip-left" class="header-right">
-                <a href="#" class="profile-icon">
-                    <img src="./images/Frame 3.svg" alt="Profile" style="margin-left: -150px;>
-                    <a href="#" class="search-icon"></a>
-                    <img src="./images/menu (1).svg" alt="Search" style="margin-left: -1px;">
+                <a href="./compas.html" class="profile-icon">
+                    <img src="./images/Frame 3.svg" alt="Profile" style="margin-left: -150px;">
+                    <a href="#" class="menu-btn">
+                        <img src="./images/menu (1).svg" alt="Menu Icon" style="margin-left: -1px;">
+                    </a>
                 </a>
             </div>
-            <!-- <div class="menu-mobile">
-                <div class="logo">
-                    <img src="./icons/Group 8.svg" alt="" /><i class="fa-solid fa-xmark close"
-                        style="color: #ffffff; font-size: 30px"></i>
-                </div>
-
-                <div class="nav_mobile">
-                    <a href="#d">destinations</a>
-                    <a href="#e">experiences</a>
-                    <a href="#a"> about</a>
-                    <a href="#g">gallery</a>
-                    <div class="social">
-                        <img style="width: 40px" src="./icons/Facebook.svg" alt="" />
-                        <img style="width: 30px" src="./icons/linkedin.svg" alt="" />
-                        <img style="width: 40px" src="./icons/Google.svg" alt="" />
-                    </div>
-                </div>
-            </div> -->
         </nav>
+        <!--  -->
+<!--  -->
+        <a href="#" class="profile-icon" id="profile-icon">
+            <img src="./images/Frame 3.svg" alt="Profile" style="margin-left: -150px;">
+        </a>
+    </div>
+    
+    
+    <!-- The large preview or modal -->
+    <div id="image-modal" class="image-modal">
+        <span id="close-modal" class="close-modal">&times;</span>
+        <img class="modal-content" id="img-in-modal">
+        <div id="caption"></div>
+    </div>
+    
+    <style>
+        /* Style for the modal */
+        .image-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+            padding-top: 60px;
+        }
+    
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+    
+        #caption {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.574);
+            padding: 10px 0;
+            font-size: 20px;
+        }
+    
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbbbbb6c;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+        <!--  -->
+        <div class="menu-overlay hidden">
+            <div class="menu-content">
+                <button class="close-btn">X</button>
+                <ul>
+                    <li><a href="#">🏡 Home</a></li>
+                    <li><a href="#">🌍 Destinations</a></li>
+                    <li><a href="#">🎒 Experiences</a></li>
+                    <li><a href="#">🖼️ Gallery</a></li>
+                    <li><a href="#">📖 About</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
 
+    <script>
+        // Select the menu button and overlay
+const menuBtn = document.querySelector('.menu-btn');
+const menuOverlay = document.querySelector('.menu-overlay');
+const closeBtn = document.querySelector('.close-btn');
+
+// Open the menu
+menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.add('visible');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+});
+
+// Close the menu
+closeBtn.addEventListener('click', () => {
+    menuOverlay.classList.remove('visible');
+    document.body.style.overflow = 'auto'; // Enable scrolling
+});
+
+// Close the menu when clicking outside the content
+menuOverlay.addEventListener('click', (e) => {
+    if (e.target === menuOverlay) {
+        menuOverlay.classList.remove('visible');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+    </script>
     <main>
         <section class="hero">
             <div data-aos="fade-right" class="hero-inner-number">

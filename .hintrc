@@ -11,6 +11,12 @@
           "backdrop-filter"
         ]
       }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id": "off"
+      }
     ]
   }
 }
